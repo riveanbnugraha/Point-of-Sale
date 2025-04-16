@@ -9,6 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <title>@yield('title')</title>
 
     <!-- Custom fonts for this template-->
@@ -36,7 +43,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('dashboard')}}">
-                <div class="sidebar-brand-icon">
+                <div class="sidebar-brand-icon  ">
                     <i class="fas fa-face-grin-tongue-wink"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Admin<sup>freak</sup></div>
@@ -61,13 +68,13 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item {{Route::is('category*') ? 'active' : ''}}">
-                <a class="nav-link collapsed" href="{{ route('category')}}">
+                <a class="nav-link collapsed" href="{{ route('category.index')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Master Category</span>
                 </a>
             </li>
             <li class="nav-item {{Route::is('item*') ? 'active' : ''}}">
-                <a class="nav-link collapsed" href="{{route('item')}}">
+                <a class="nav-link collapsed" href="{{route('item.index')}}">
                     <i class="fas fa-fw fa-list"></i>
                     <span>Master Items</span>
                 </a>
@@ -83,13 +90,13 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item {{Route::is('transaction*') ? 'active' : ''}}">
-                <a class="nav-link collapsed" href="{{route('transaction')}}">
+                <a class="nav-link collapsed" href="{{route('transaction.index')}}">
                     <i class="fas fa-fw fa-cart-shopping"></i>
                     <span>Transaction</span>
                 </a>
             </li>
             <li class="nav-item {{Route::is('tranhis*') ? 'active' : ''}}">
-                <a class="nav-link collapsed" href="{{route('tranhis')}}">
+                <a class="nav-link collapsed" href="{{route('tranhis.index')}}">
                     <i class="fas fa-fw fa-clock-rotate-left"></i>
                     <span>Transaction History</span>
                 </a>
