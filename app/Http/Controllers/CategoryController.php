@@ -18,7 +18,6 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = category::all();
-    //     return $court;
         return view('category', compact('categories'));
         
     }
@@ -36,7 +35,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:2|max:10'
+        ],[
+            'name.required' => 'isien cak',
+            'name.min' => 'minim 2 char',
+            'name.max' => 'maksimal sepuluhh'
+        ]);
+
+        $message = [
+            'required' => 'harap diisi semua'
+        ];
+
+        category::create([
+            'name' => $request->name ]);
+
+        return redirect()->back()->with('success', 'Category added!');
     }
 
     /**
@@ -52,7 +66,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return $category;
     }
 
     /**
@@ -60,7 +74,9 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        // $category = category::find($id);
+        $category->update($request->all());
+        return redirect()->back()->with('success', 'updated successfully');
     }
 
     /**
@@ -68,6 +84,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->back()->with('success', 'Delete success!');
     }
 }

@@ -2,7 +2,7 @@
 @section('title', 'master item')
 @section('content-title', 'Item')    
 @section('content')
-<div class="col-md-10 text-dark " style="">
+<div class="row text-dark" style="">
     <div class="col-md-7 mt-3 ps-2">
         <div class="card">
             <div class="card-header"><h1>Item</h1></div>
@@ -53,6 +53,20 @@
                   </div>
             </div>
         </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-header">
+          ase
+        </div>
+        <div class="card-body">
+          <form action="{{route ('Item.destroy', $item)}}">
+            @csrf
+            @method('DELETE')
+            <input class="btn btn-sm btn-danger" type="submit" onclick="return confirm('anda yakin')">
+          </form>
+        </div>
+      </div>
     </div>
 </div>
 @endsection
